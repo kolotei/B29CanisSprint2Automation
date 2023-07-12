@@ -1,4 +1,4 @@
-package com.project_name.utilities;
+package com.sprint2Implementation.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

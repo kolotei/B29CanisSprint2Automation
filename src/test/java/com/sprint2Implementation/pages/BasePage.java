@@ -1,10 +1,10 @@
-package com.project_name.pages;
+package com.sprint2Implementation.pages;
 
 
 
 
-import com.project_name.utilities.BrowserUtils;
-import com.project_name.utilities.Driver;
+import com.sprint2Implementation.utilities.BrowserUtils;
+import com.sprint2Implementation.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

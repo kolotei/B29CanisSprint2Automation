@@ -1,4 +1,4 @@
-package com.project_name.utilities;
+package com.sprint2Implementation.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

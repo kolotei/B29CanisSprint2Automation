@@ -1,11 +1,11 @@
-package com.project_name.step_definitions;
+package com.sprint2Implementation.step_definitions;
 
 
 
 
-import com.project_name.utilities.BrowserUtils;
-import com.project_name.utilities.ConfigurationReader;
-import com.project_name.utilities.Driver;
+import com.sprint2Implementation.utilities.BrowserUtils;
+import com.sprint2Implementation.utilities.ConfigurationReader;
+import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

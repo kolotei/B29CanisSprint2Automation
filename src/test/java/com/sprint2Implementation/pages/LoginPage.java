@@ -1,4 +1,4 @@
-package com.project_name.pages;
+package com.sprint2Implementation.pages;
 
 
 import com.fleet.utilities.Driver;

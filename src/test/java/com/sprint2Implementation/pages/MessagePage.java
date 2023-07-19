@@ -15,6 +15,9 @@ public class MessagePage {
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
     public WebElement messageBtn;
 
+    @FindBy(xpath ="//span[@id='bx-b-uploadfile-blogPostForm']")
+    public WebElement uploadFileBtn;
+
 
 
 

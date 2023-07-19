@@ -1,5 +1,6 @@
 package com.sprint2Implementation.step_definitions;
 
+import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +8,7 @@ import io.cucumber.java.en.When;
 public class uploadFilesAndImages_StepDefinitions {
     @Given("user is already on the homepage")
     public void user_is_already_on_the_homepage() {
+        Driver.getDriver().get("https://qa.nextbasecrm.com/stream/");
 
     }
     @When("user opens a new message")

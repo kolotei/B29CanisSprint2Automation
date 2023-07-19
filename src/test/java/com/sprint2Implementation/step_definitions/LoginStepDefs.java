@@ -20,7 +20,7 @@ public class LoginStepDefs {
         if(userType.equalsIgnoreCase("hr")){
             username = ConfigurationReader.getProperty("hr_username");
             password = ConfigurationReader.getProperty("password");
-        }else if(userType.equalsIgnoreCase("helpdesk")){
+        }else if(userType.equalsIgnoreCase("help desk")){
             username = ConfigurationReader.getProperty("helpdesk_username");
             password = ConfigurationReader.getProperty("password");
         }else if(userType.equalsIgnoreCase("marketing")){

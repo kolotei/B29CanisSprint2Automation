@@ -1,23 +1,28 @@
 package com.sprint2Implementation.step_definitions;
 
+import com.sprint2Implementation.pages.MessagePage;
 import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class uploadFilesAndImages_StepDefinitions {
+    MessagePage messagePage = new MessagePage();
+    LoginStepDefs loginStepDefs = new LoginStepDefs();
     @Given("user is already on the homepage")
     public void user_is_already_on_the_homepage() {
         Driver.getDriver().get("https://qa.nextbasecrm.com/stream/");
-
+        loginStepDefs.the_user_logged_in_with_username_as_and_password_as("hr11@cybertekschool.com", "UserUser");
     }
     @When("user opens a new message")
     public void user_opens_a_new_message() {
 
+        messagePage.messageBtn.click();
     }
     @When("user clicks to upload files icon")
     public void user_clicks_to_upload_files_icon() {
 
+        messagePage.uploadFileBtn.click();
     }
     @When("user clicks to upload files and images button")
     public void user_clicks_to_upload_files_and_images_button() {

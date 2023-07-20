@@ -20,6 +20,8 @@ public class MessagePage {
     @FindBy(xpath ="//span[@id='bx-b-uploadfile-blogPostForm']")
     public WebElement uploadFileBtn;
 
+    @FindBy(xpath = "//input[@name='bxu_files[]']")
+    public WebElement UploadFileAndImageBtn;
 
 
 }

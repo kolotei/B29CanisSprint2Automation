@@ -1,6 +1,6 @@
 package com.sprint2Implementation.pages;
 
-// import com.fleet.utilities.Driver;
+
 import com.sprint2Implementation.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,22 +12,22 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="prependedInput")
+    @FindBy(xpath="//input[@type='text']")
     public WebElement userName;
 
 
 
-    @FindBy(id="prependedInput2")
+    @FindBy(xpath="//input[@type='password']")
     public WebElement password;
 
-    @FindBy(name = "_submit")
-    public WebElement submit;
+    @FindBy(xpath = "//input[@class='login-btn']")
+    public WebElement logInBtn;
 
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
-        submit.click();
+        logInBtn.click();
         // verification that we logged
     }
 

@@ -5,18 +5,15 @@ import com.sprint2Implementation.utilities.ConfigurationReader;
 import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class US14_company_StepDefintions {
 
     US14_CompanyPage companyPage = new US14_CompanyPage();
-    LoginStepDefs loginStepDefs = new LoginStepDefs();
 
-    @Given("user is on the company page")
-    public void user_is_on_the_company_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        loginStepDefs.the_user_logged_in_with_username_as_and_password_as("hr11@cybertekschool.com", "UserUser");
-        companyPage.companyBtn.click();
-
+    @When("is on the company page")
+    public void isOnTheCompanyPage() {
+       companyPage.companyBtn.click();
     }
 
     @Then("user should see all modules displayed as expected")

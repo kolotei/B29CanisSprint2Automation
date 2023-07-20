@@ -22,22 +22,20 @@ public class uploadFilesAndImages_StepDefinitions {
     }
     @When("user opens a new message")
     public void user_opens_a_new_message() {
-
         messagePage.messageBtn.click();
     }
     @When("user clicks to upload files icon")
     public void user_clicks_to_upload_files_icon() {
-
         messagePage.uploadFileBtn.click();
     }
     @When("user clicks to upload files and images button")
     public void user_clicks_to_upload_files_and_images_button() {
-
+    //TODO FIGURE OUT IF WE NEED ROBOT FOR THIS AND NEXT STEP
         messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/Day 12 Class Notes.txt");
     }
     @When("user selects desired file or image to upload")
     public void user_selects_desired_file_or_image_to_upload() throws AWTException {
-
+//TODO FIGURE OUT IF WE NEED ROBOT FOR THIS AND ABOVE STEP
         Robot robot = new Robot();
 
     }
@@ -46,22 +44,23 @@ public class uploadFilesAndImages_StepDefinitions {
 
     }
 
+    @When("user uploads a file or image")
+    public void user_uploads_a_file_or_image() {
+
+    }
+
     @When("user clicks to insert file or image into text")
     public void user_clicks_to_insert_file_or_image_into_text() {
-
+    messagePage.insertInTextBtn.click();
     }
     @Then("user should see that file or image is successfully moved into text field")
     public void user_should_see_that_file_or_image_is_successfully_moved_into_text_field() {
 
     }
 
-    @When("user uploads a file or image")
-    public void user_uploads_a_file_or_image() {
-
-    }
     @When("user clicks remove file or image icon")
     public void user_clicks_remove_file_or_image_icon() {
-
+    messagePage.deleteFileBtn.click();
     }
     @Then("user should see the file is successfully removed from message")
     public void user_should_see_the_file_is_successfully_removed_from_message() {

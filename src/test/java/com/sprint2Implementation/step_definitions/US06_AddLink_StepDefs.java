@@ -6,10 +6,8 @@ import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
-public class AddLink_StepDefinitions {
+public class US06_AddLink_StepDefs {
     AddLinkPage addLinkPage = new AddLinkPage();
     @Given("user clicks Send message field")
     public void user_clicks_send_message_field() {

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Drive_StepDefinitions {
+public class US13_Drive_StepDefs {
     DrivePage drivePage = new DrivePage();
     @Given("user clicks the Drive button")
     public void user_clicks_the_drive_button() {

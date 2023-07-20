@@ -5,7 +5,7 @@ Feature: Users should be able to login
 
 
   Scenario: Verify login with different user types
-    Given the user logged in as "help desk"
+    Given the user logged in as "hr"
 
 
 

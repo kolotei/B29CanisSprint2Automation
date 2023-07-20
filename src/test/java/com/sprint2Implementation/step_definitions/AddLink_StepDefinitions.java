@@ -24,7 +24,7 @@ public class AddLink_StepDefinitions {
     public void user_enters_text_in_the_link_text_field() {
 
        // Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
-        addLinkPage.linkText.sendKeys("JavaPractice");
+        addLinkPage.linkText.sendKeys("JavaPractice!!");
     }
     @Given("user enters URL address in the Link URL field")
     public void user_enters_url_address_in_the_link_url_field() {
@@ -39,11 +39,11 @@ public class AddLink_StepDefinitions {
     @Given("user clicks SEND button")
     public void user_clicks_send_button() {
         addLinkPage.sendBtn.click();
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(3);
     }
     @Then("user is able to see the message with the Link text in Activity Stream")
     public void user_is_able_to_see_the_message_with_the_link_text_in_activity_stream() {
-        String expected = "JavaPractice";
+        String expected = "JavaPractice!!";
         String actual = addLinkPage.message.getText();
         Assert.assertEquals(expected, actual);
     }
@@ -55,7 +55,7 @@ public class AddLink_StepDefinitions {
     @Given("user clicks on the attached link")
     public void user_clicks_on_the_attached_link() {
         addLinkPage.message.click();
-        BrowserUtils.sleep(6);
+        BrowserUtils.sleep(3);
     }
     @Then("user navigate to the correct URL")
     public void user_navigate_to_the_correct_url() {

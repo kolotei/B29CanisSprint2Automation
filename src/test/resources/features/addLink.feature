@@ -1,4 +1,4 @@
-
+@us6
 Feature: User should be able to add link in message
 
   Background: User is already in the log in page

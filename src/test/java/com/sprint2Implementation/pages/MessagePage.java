@@ -23,5 +23,11 @@ public class MessagePage {
     @FindBy(xpath = "//input[@name='bxu_files[]']")
     public WebElement UploadFileAndImageBtn;
 
+    @FindBy(xpath = "//span[@class='insert-btn']")
+    public WebElement insertInTextBtn;
+
+    @FindBy(xpath = "//span[@class='del-but']")
+    public WebElement deleteFileBtn;
+
 
 }

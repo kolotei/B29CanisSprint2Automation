@@ -2,14 +2,14 @@
 Feature: NextBase CRM upload files and images as messages functionality
   Agile story: As a user, I should be able ot upload files and pictures as messages
 
-  Background: User is already logged in
-    Given user is already logged in
+  Background: User is already on the log in page
+    Given user is on the login page
 @wip
   Scenario: Upload file and pictures to message functionality
+  Given the user logged in as "hr"
     When user opens a new message
     And user clicks to upload files icon
-    And user clicks to upload files and images button
-    And user selects desired file or image to upload
+    And user uploads desired file or image
     Then user should see file or image successfully uploaded to message as attachment
 
 

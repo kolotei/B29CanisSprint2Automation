@@ -1,14 +1,14 @@
 package com.sprint2Implementation.step_definitions;
 
-import com.sprint2Implementation.pages.CompanyPage;
+import com.sprint2Implementation.pages.US14_CompanyPage;
 import com.sprint2Implementation.utilities.ConfigurationReader;
 import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class company_StepDefintions {
+public class US14_company_StepDefintions {
 
-    CompanyPage companyPage = new CompanyPage();
+    US14_CompanyPage companyPage = new US14_CompanyPage();
     LoginStepDefs loginStepDefs = new LoginStepDefs();
 
     @Given("user is on the company page")

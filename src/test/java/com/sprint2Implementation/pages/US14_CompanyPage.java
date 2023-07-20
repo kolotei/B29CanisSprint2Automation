@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CompanyPage {
+public class US14_CompanyPage {
 
-    public CompanyPage (){
+    public US14_CompanyPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

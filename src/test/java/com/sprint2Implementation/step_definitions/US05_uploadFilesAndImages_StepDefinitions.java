@@ -1,19 +1,16 @@
 package com.sprint2Implementation.step_definitions;
 
-import com.sprint2Implementation.pages.MessagePage;
+import com.sprint2Implementation.pages.US05_MessagePage;
 import com.sprint2Implementation.utilities.ConfigurationReader;
 import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 
-public class uploadFilesAndImages_StepDefinitions {
-    MessagePage messagePage = new MessagePage();
+public class US05_uploadFilesAndImages_StepDefinitions {
+    US05_MessagePage messagePage = new US05_MessagePage();
     LoginStepDefs loginStepDefs = new LoginStepDefs();
     @Given("user is already on the homepage")
     public void user_is_already_on_the_homepage() {

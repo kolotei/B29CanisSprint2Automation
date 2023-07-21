@@ -1,18 +1,14 @@
 package com.sprint2Implementation.step_definitions;
 
-import com.sprint2Implementation.pages.US05_MessagePage;
-import com.sprint2Implementation.utilities.ConfigurationReader;
-import com.sprint2Implementation.utilities.Driver;
+import com.sprint2Implementation.pages.MessagePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import java.awt.*;
-
 public class US05_uploadFilesAndImages_StepDefinitions {
-    US05_MessagePage messagePage = new US05_MessagePage();
+    MessagePage messagePage = new MessagePage();
 
     @When("user opens a new message")
     public void user_opens_a_new_message() {

@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US170_CompanyStructurePage {
-    public US170_CompanyStructurePage(){
+public class US08_CompanyStructurePage {
+    public US08_CompanyStructurePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -26,6 +26,7 @@ public class US170_CompanyStructurePage {
     @FindBy(xpath ="//a[@title='HR']")
     public WebElement hrHeader;
 
-
+    @FindBy(xpath = "//span[normalize-space()='Employees']")
+    public WebElement employeeLink;
 
 }

@@ -7,21 +7,16 @@ Feature: Sending message in Active Stream feature
     Given the user is on the login page
 @TC1D
     Scenario: verify user should be able send a message by filling in the mandatory fields 'Message content & 'Recipient'
+   When user navigate to "url"
       Given user logged in as "marketing"
-      And user see the following module on the Main Page
-      | MESSAGE|
-      | TASK   |
-      | EVENT  |
-      | POLL   |
-      | MORE   |
       When user clicks on MESSAGE button
       And  user see message field collapse
       Then user clicks Send button without typing a message
-      Then user get error message "The message title is not specified"
-      And  user type a message in "Message field"
-      And  user delete the default recipients to " All employees"
+      Then user get error message: The message title is not specified
+      And  user type a message in Message field
+      And  user delete the default recipients to  All employees
       Then user click SEND button
-      Then user see messages "Please specify at least one person."
+      Then user get error message: Please specify at least one person.
       And  user see default settings appeared on the page
       Then user click SEND button
       And  user see message displayed under Activity Stream

@@ -15,8 +15,8 @@ public class MessageInActiveStreamPage {
     @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]")
     public WebElement SendBtn;
 
-    @FindBy(xpath = "//*[@id=\"feed-add-post-destination-item\"]/span")
-    public WebElement AllEmployeesBtn;
+    @FindBy(xpath = "//*[@id=\"feed-add-post-destination-item\"]/span/span[2]")
+    public WebElement AllEmployeesDelBtn;
 
 
     @FindBy(xpath = "//*[@id=\"blog-submit-button-cancel\"]/text()")
@@ -25,6 +25,15 @@ public class MessageInActiveStreamPage {
     @FindBy(xpath = "//*[@id=\"bx-html-editor-iframe-cnt-idPostFormLHE_blogPostForm\"]/iframe")
 
     public WebElement MessageInputBox;
+
+    @FindBy(xpath = "//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]")
+
+    public WebElement MessageError;
+
+    @FindBy(xpath = "//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]")
+
+    public WebElement SpecifyPersonMessageError;
+
 
 
 

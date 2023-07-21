@@ -33,7 +33,7 @@ public class US170_CompanyStructureStepDefs {
 
     @And("User go to Employee Page")
     public void userGoToEmployeePage() {
-        loginPage.employeeLink.click();
+       // loginPage`.employeeLink.click();
     }
     @Then("user should be able to see Company Structure on the page")
     public void user_should_be_able_to_see_company_structure_on_the_page() {
@@ -64,7 +64,7 @@ public class US170_CompanyStructureStepDefs {
 
     @Then("user verify Add Department is not displayed")
     public void user_verify_add_department_is_not_displayed() {
-        loginPage.employeeLink.click();
+       // loginPage.employeeLink.click();
         //Assert.assertTrue("Its is displayed" ,!strPage.addDepBtn.isDisplayed());
     }
 

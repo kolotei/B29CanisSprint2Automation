@@ -6,7 +6,7 @@ Feature: user should be able to access the Drive page
 
     Scenario: Verify the users view the 6 modules on the Drive page
       Given the user logged in as "hr"
-      And user clicks the Drive button
+      When user clicks the Drive button
       Then user can see the following modules on the Drive page
     |My Drive|
     |All Documents|

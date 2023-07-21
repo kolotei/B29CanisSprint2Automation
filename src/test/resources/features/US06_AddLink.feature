@@ -6,7 +6,7 @@ Feature: User should be able to add link in message
 
     Scenario: Verify users can attach a link in message
       Given the user logged in as "hr"
-      And user clicks Send message field
+      When user clicks Send message field
       And user clicks the Link icon
       And user enters text in the Link text field
       And user enters URL address in the Link URL field
@@ -17,7 +17,7 @@ Feature: User should be able to add link in message
 
       Scenario: Verify users can navigate to the correct URL by clicking on the link
         Given the user logged in as "help desk"
-        And user clicks Send message field
+        When user clicks Send message field
         And user clicks the Link icon
         And user enters text in the Link text field
         And user enters URL address in the Link URL field
@@ -30,7 +30,7 @@ Feature: User should be able to add link in message
 
     Scenario: Verify link is opening in a new tab
       Given the user logged in as "help desk"
-      And user clicks Send message field
+      When user clicks Send message field
       And user clicks the Link icon
       And user enters text in the Link text field
       And user enters URL address in the Link URL field

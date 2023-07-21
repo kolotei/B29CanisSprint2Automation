@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US05_MessagePage {
+public class MessagePage {
 
-    public US05_MessagePage(){
+    public MessagePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -26,5 +26,7 @@ public class US05_MessagePage {
     @FindBy(xpath = "//span[@class='del-but']")
     public WebElement deleteFileBtn;
 
+    @FindBy(xpath = "//a[@class='files-path']")
+    public WebElement uploadedFilesConfMessage;
 
 }

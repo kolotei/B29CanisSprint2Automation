@@ -5,8 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddLinkPage {
-    public AddLinkPage(){
+import java.util.List;
+
+public class ActivityStreamPage {
+    public ActivityStreamPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -32,4 +34,14 @@ public class AddLinkPage {
 
     @FindBy(xpath = "//a[@href='https://codingbat.com/java']")
     public WebElement message;
+
+    @FindBy(id = "feed-add-post-form-tab")
+    public WebElement topOptions;
+
+    @FindBy(id = "feed-add-post-form-link-more")
+    public WebElement MORE;
+
+
+    @FindBy(xpath = "//span[@class='menu-popup-item-text']")
+    public List<WebElement> MOREoptions;
 }

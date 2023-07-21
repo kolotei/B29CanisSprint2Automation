@@ -15,13 +15,12 @@ public class LoginPage {
     @FindBy(xpath="//input[@type='text']")
     public WebElement userName;
 
-
-
     @FindBy(xpath="//input[@type='password']")
     public WebElement password;
 
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement logInBtn;
+
 
 
     public void login(String userNameStr, String passwordStr) {

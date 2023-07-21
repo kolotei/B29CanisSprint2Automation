@@ -23,10 +23,16 @@ public class MessagePage {
     @FindBy(xpath = "//span[@class='insert-btn']")
     public WebElement insertInTextBtn;
 
-    @FindBy(xpath = "//span[@class='del-but']")
-    public WebElement deleteFileBtn;
-
     @FindBy(xpath = "//a[@class='files-path']")
     public WebElement uploadedFilesConfMessage;
+
+    @FindBy(xpath = "//td[@class='files-info']")
+    public WebElement inTextMessage;
+
+    @FindBy(xpath = "//td[@class='files-del-btn']")
+    public WebElement deleteUploadBtn;
+
+    @FindBy(xpath = "//td[@class='files-name']")
+    public WebElement uploadedFile;
 
 }

@@ -2,11 +2,13 @@ package com.sprint2Implementation.step_definitions;
 
 import com.sprint2Implementation.pages.MessagePage;
 import com.sprint2Implementation.utilities.BrowserUtils;
+import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class US05_uploadFilesAndImages_StepDefinitions {
     MessagePage messagePage = new MessagePage();
@@ -39,7 +41,7 @@ public class US05_uploadFilesAndImages_StepDefinitions {
     @Then("user should see file or image successfully uploaded to message as attachment")
     public void user_should_see_file_or_image_successfully_uploaded_to_message_as_attachment() {
 
-        Assert.assertTrue(messagePage.insertInTextBtn.isEnabled());
+        BrowserUtils.verifyElementDisplayed(By.xpath("//td[@class='files-name']"));
     }
 
 
@@ -52,7 +54,6 @@ public class US05_uploadFilesAndImages_StepDefinitions {
 
     @Then("user should see that file or image is successfully moved into text field")
     public void user_should_see_that_file_or_image_is_successfully_moved_into_text_field() {
-
         String expected = "In text";
         String actual = messagePage.inTextMessage.getText();
         Assert.assertEquals(expected, actual);
@@ -69,7 +70,7 @@ public class US05_uploadFilesAndImages_StepDefinitions {
     @Then("user should see the file is successfully removed from message")
     public void user_should_see_the_file_is_successfully_removed_from_message() {
 
-        Assert.assertFalse(messagePage.uploadedFile.isDisplayed());
+        BrowserUtils.verifyElementNotDisplayed(By.xpath("//td[@class='files-name']"));
 
     }
 

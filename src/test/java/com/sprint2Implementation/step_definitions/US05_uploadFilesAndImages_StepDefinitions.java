@@ -25,15 +25,11 @@ public class US05_uploadFilesAndImages_StepDefinitions {
 
     @And("user uploads desired file or image")
     public void userUploadsDesiredFileOrImage() {
-
-        //TODO ASK AARON ABOUT PARAMETERIZING THESE WITH A SEPARATE FILE
         messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Desktop/Screen Shot 2023-07-18 at 11.50.20 AM.png");
     }
 
     @And("user uploads .jpg .pdf .docx and .txt files")
     public void userUploadsJpgPdfDocxAndTxtFiles() {
-
-        //TODO ASK AARON ABOUT PARAMETERIZING THESE WITH A SEPARATE FILE
         messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/Java_Interview_Questions_ALL (3).docx");
         messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/THE_PLATEAU_OF_LATENT_POTENTIAL.pdf");
         messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/VTDMV2.jpg");
@@ -43,7 +39,7 @@ public class US05_uploadFilesAndImages_StepDefinitions {
     @Then("user should see file or image successfully uploaded to message as attachment")
     public void user_should_see_file_or_image_successfully_uploaded_to_message_as_attachment() {
 
-        Assert.assertTrue(messagePage.uploadedFile.isDisplayed());
+        Assert.assertTrue(messagePage.insertInTextBtn.isEnabled());
     }
 
 
@@ -68,13 +64,12 @@ public class US05_uploadFilesAndImages_StepDefinitions {
     @When("user clicks remove file or image icon")
     public void user_clicks_remove_file_or_image_icon() {
     messagePage.deleteUploadBtn.click();
-    BrowserUtils.sleep(3);
     }
 
     @Then("user should see the file is successfully removed from message")
     public void user_should_see_the_file_is_successfully_removed_from_message() {
 
-        //Assert.assertFalse(messagePage.uploadedFile.isDisplayed());
+        Assert.assertFalse(messagePage.uploadedFile.isDisplayed());
 
     }
 

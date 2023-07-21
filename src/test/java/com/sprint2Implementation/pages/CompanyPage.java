@@ -13,4 +13,7 @@ public class CompanyPage {
 
     @FindBy(xpath = "//a[@title='Company']")
     public WebElement companyBtn;
+
+    @FindBy(xpath = "//a[@class='main-buttons-item-link']")
+    public WebElement menuBarBtns;
 }

@@ -29,7 +29,7 @@ Feature: User should be able to add link in message
 
 
     Scenario: Verify link is opening in a new tab
-      Given the user logged in as "help desk"
+      Given the user logged in as "marketing"
       When user clicks Send message field
       And user clicks the Link icon
       And user enters text in the Link text field

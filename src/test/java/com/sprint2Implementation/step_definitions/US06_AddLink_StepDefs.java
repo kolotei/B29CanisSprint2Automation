@@ -6,6 +6,11 @@ import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class US06_AddLink_StepDefs {
     ActivityStreamPage activityStreamPage = new ActivityStreamPage();
@@ -22,7 +27,7 @@ public class US06_AddLink_StepDefs {
     public void user_enters_text_in_the_link_text_field() {
 
        // Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
-        activityStreamPage.linkText.sendKeys("JavaPractice!!");
+        activityStreamPage.linkText.sendKeys("CodingBat");
     }
     @Given("user enters URL address in the Link URL field")
     public void user_enters_url_address_in_the_link_url_field() {
@@ -41,7 +46,7 @@ public class US06_AddLink_StepDefs {
     }
     @Then("user is able to see the message with the Link text in Activity Stream")
     public void user_is_able_to_see_the_message_with_the_link_text_in_activity_stream() {
-        String expected = "JavaPractice!!";
+        String expected = "CodingBat";
         String actual = activityStreamPage.message.getText();
         Assert.assertEquals(expected, actual);
     }

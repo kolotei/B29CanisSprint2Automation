@@ -35,8 +35,8 @@ public class ActivityStreamPage {
     @FindBy(xpath = "//a[@href='https://codingbat.com/java']")
     public WebElement message;
 
-    @FindBy(id = "feed-add-post-form-tab")
-    public WebElement topOptions;
+    @FindBy(xpath = "//div[@class='feed-add-post-form-variants']/span")
+    public List<WebElement> topOptions;
 
     @FindBy(id = "feed-add-post-form-link-more")
     public WebElement MORE;

@@ -13,10 +13,12 @@ public class US09_ActivityStream_StepDefs {
 
     ActivityStreamPage activityStreamPage = new ActivityStreamPage();
     @Then("user can view the following options on Activity stream page")
-    public void user_can_view_the_following_options_on_activity_stream_page(List<String> expectedOptions) {
-        String actualOptions = activityStreamPage.topOptions.getText();
-
-        Assert.assertEquals(expectedOptions, actualOptions);
+    public void user_can_view_the_following_options_on_activity_stream_page(List<String> expectedModules) {
+        List<String> actualModules = new ArrayList<>();
+        for (WebElement eachModule : activityStreamPage.topOptions) {
+            actualModules.add(eachModule.getText());
+        }
+        Assert.assertEquals(expectedModules, actualModules);
     }
 
 

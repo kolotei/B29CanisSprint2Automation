@@ -1,32 +1,37 @@
 package com.sprint2Implementation.step_definitions;
+import com.sprint2Implementation.pages.LoginPage;
+import com.sprint2Implementation.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import com.sprint2Implementation.pages.MessageInActiveStreamPage;
+import com.sprint2Implementation.utilities.ConfigurationReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 public class US04_MessageInActivityStream_StepDef {
 
- US04_MessageInActivityStream_StepDef US04 = new US04_MessageInActivityStream_StepDef();
+ MessageInActiveStreamPage MessageInActivityStream = new MessageInActiveStreamPage();
+ LoginPage LoginPage = new LoginPage();
 
-    LoginStepDefs loginStepDefs = new LoginStepDefs();
 
-    @Given("user logged in as {string}")
+
+    @When("user navigate to {string}")
+    public void user_navigate_to(String string) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
+ @Given("user logged in as {string}")
     public void user_logged_in_as(String string) {
+     LoginPage.userName.sendKeys(ConfigurationReader.getProperty("marketing_username"));
+     LoginPage.password.sendKeys(ConfigurationReader.getProperty("password"));
+     LoginPage.logInBtn.click();
 
     }
-    @Given("user see the following module on the Main Page")
-    public void user_see_the_following_module_on_the_main_page(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
 
-    }
     @When("user clicks on MESSAGE button")
     public void user_clicks_on_message_button() {
+        MessageInActivityStream.MessageBtn.click();
 
     }
     @When("user see message field collapse")
@@ -35,26 +40,33 @@ public class US04_MessageInActivityStream_StepDef {
     }
     @Then("user clicks Send button without typing a message")
     public void user_clicks_send_button_without_typing_a_message() {
+    MessageInActivityStream.SendBtn.click();
 
     }
-    @Then("user get error message {string}")
-    public void user_get_error_message(String string) {
+   @Then("user get error message: The message title is not specified")
+   public void user_get_error_message_the_message_title_is_not_specified() {
+        MessageInActivityStream.MessageError.isDisplayed();
+
+   }
+   @Then("user type a message in Message field")
+   public void user_type_a_message_in_message_field() {
 
     }
-    @Then("user type a message in {string}")
-    public void user_type_a_message_in(String string) {
+   @Then("user delete the default recipients to  All employees")
+   public void user_delete_the_default_recipients_to_all_employees() {
+        MessageInActivityStream.AllEmployeesDelBtn.click();
 
-    }
-    @Then("user delete the default recipients to {string}")
-    public void user_delete_the_default_recipients_to(String string) {
 
     }
     @Then("user click SEND button")
     public void user_click_send_button() {
+        MessageInActivityStream.SendBtn.click();
 
     }
-    @Then("user see messages {string}")
-    public void user_see_messages(String string) {
+    @Then("user get error message: Please specify at least one person.")
+    public void user_get_error_message_please_specify_at_least_one_person() {
+        MessageInActivityStream.SpecifyPersonMessageError.isDisplayed();
+
 
     }
     @Then("user see default settings appeared on the page")
@@ -64,21 +76,28 @@ public class US04_MessageInActivityStream_StepDef {
     @Then("user see message displayed under Activity Stream")
     public void user_see_message_displayed_under_activity_stream() {
 
+
     }
     @When("user click MESSAGE tab")
     public void user_click_message_tab() {
+        MessageInActivityStream.MessageBtn.click();
 
     }
     @Then("user see delivery to All employees")
     public void user_see_delivery_to_all_employees() {
 
+
     }
     @When("user type a Message")
     public void user_type_a_message() {
+        //iframe .switchTo()
+        MessageInActivityStream.MessageInputBox.click();
+        MessageInActivityStream.MessageInputBox.sendKeys("Hello" );
 
     }
     @Then("user click Cancel")
     public void user_click_cancel() {
+        MessageInActivityStream.CancelBtn.click();
 
     }
     @Then("user sees message Canceled to send.")

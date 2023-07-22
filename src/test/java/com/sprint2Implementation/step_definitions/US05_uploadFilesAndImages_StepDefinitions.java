@@ -27,21 +27,35 @@ public class US05_uploadFilesAndImages_StepDefinitions {
 
     @And("user uploads desired file or image")
     public void userUploadsDesiredFileOrImage() {
-        messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Desktop/Screen Shot 2023-07-18 at 11.50.20 AM.png");
+        String projectPath = System.getProperty("user.dir");
+        String pngFilePath = "src/test/resources/filesToUpload/Screen Shot 2023-07-20 at 12.54.20 PM.png";
+        String pngFullPath = projectPath + "/" + pngFilePath;
+        messagePage.UploadFileAndImageBtn.sendKeys(pngFullPath);
     }
 
     @And("user uploads .jpg .pdf .docx and .txt files")
     public void userUploadsJpgPdfDocxAndTxtFiles() {
-        messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/Java_Interview_Questions_ALL (3).docx");
-        messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/THE_PLATEAU_OF_LATENT_POTENTIAL.pdf");
-        messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Downloads/VTDMV2.jpg");
-        messagePage.UploadFileAndImageBtn.sendKeys("/Users/maggie/Desktop/Java Class Materials/Day 16_ Loops Continued/day16 class notes.txt");
+        String projectPath = System.getProperty("user.dir");
+        String pdfFilePath = "src/test/resources/filesToUpload/THE_PLATEAU_OF_LATENT_POTENTIAL.pdf";
+        String pngFullPath = projectPath + "/" + pdfFilePath;
+        String jpgFilePath = "src/test/resources/filesToUpload/VTDMV2.jpg";
+        String jpgFullPath = projectPath + "/" + jpgFilePath;
+        String docxFilePath = "src/test/resources/filesToUpload/Java_Interview_Questions_ALL (3).docx";
+        String docxFullPath = projectPath + "/" + docxFilePath;
+        String txtFilePath = "src/test/resources/filesToUpload/note.java";
+        String txtFullPath = projectPath + "/" + txtFilePath;
+        messagePage.UploadFileAndImageBtn.sendKeys(pngFullPath);
+        messagePage.UploadFileAndImageBtn.sendKeys(jpgFullPath);
+        messagePage.UploadFileAndImageBtn.sendKeys(docxFullPath);
+        messagePage.UploadFileAndImageBtn.sendKeys(txtFullPath);
+
+
     }
 
     @Then("user should see file or image successfully uploaded to message as attachment")
     public void user_should_see_file_or_image_successfully_uploaded_to_message_as_attachment() {
 
-        BrowserUtils.verifyElementDisplayed(By.xpath("//td[@class='files-name']"));
+        Assert.assertTrue(messagePage.uploadedFilesConfMessage.isDisplayed());
     }
 
 
@@ -70,7 +84,7 @@ public class US05_uploadFilesAndImages_StepDefinitions {
     @Then("user should see the file is successfully removed from message")
     public void user_should_see_the_file_is_successfully_removed_from_message() {
 
-        BrowserUtils.verifyElementNotDisplayed(By.xpath("//td[@class='files-name']"));
+      Assert.assertFalse(messagePage.uploadedFilesConfMessage.isDisplayed());
 
     }
 

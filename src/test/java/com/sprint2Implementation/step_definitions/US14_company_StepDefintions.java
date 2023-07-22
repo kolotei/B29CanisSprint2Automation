@@ -1,9 +1,11 @@
 package com.sprint2Implementation.step_definitions;
 
 import com.sprint2Implementation.pages.CompanyPage;
+import com.sprint2Implementation.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -19,14 +21,18 @@ public class US14_company_StepDefintions {
     }
 
 
+    @Then("user sees all modules on Company page")
+    public void userSeesAllModulesOnCompanyPage(List<String> expected) {
 
-    @Then("user sees following modules on Company page")
-    public void userSeesFollowingModulesOnCompanyPage(List<String> expectedModules) {
-
-//            List<String> actualModules = new ArrayList<>();
-//            for (WebElement eachModule : companyPage.menuBarBtns) {
-//                actualModules.add(eachModule.getText());
+            List<WebElement> tabsName = Driver.getDriver().findElements(By.xpath("//a[@class='main-buttons-item-link']//span[@class='main-buttons-item-text-title']"));
+            List<String> tabsNameString = new ArrayList<>();
+            for(WebElement e : tabsName) {
+                tabsNameString.add(e.getText());
+            }
+//            List<String> actual = new ArrayList<>();
+//            for (WebElement each : companyPage.menuBarBtns) {
+//                actualModules.add(each.getText());
 //            }
-//            Assert.assertEquals(expectedModules, actualModules);
+//            Assert.assertEquals(expected, actual);
         }
-}
+        }

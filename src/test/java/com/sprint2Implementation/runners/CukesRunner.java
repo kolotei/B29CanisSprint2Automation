@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/sprint2Implementation/step_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "@US05",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}

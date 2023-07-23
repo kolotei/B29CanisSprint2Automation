@@ -12,6 +12,7 @@ public class US08_CompanyStructureStepDefs {
 
     @And("User go to Employee Page")
     public void userGoToEmployeePage() {
+
         comp_strPage.employeeLink.click();
     }
     @Then("user should be able to see Company Structure on the page")

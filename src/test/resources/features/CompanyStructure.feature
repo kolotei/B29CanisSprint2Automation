@@ -12,6 +12,7 @@ Feature:Company Structure functionality
 
 	Scenario: HR user adds a department to the company structure
 		Given the user logged in as "hr"
+		And User go to Employee Page
 		When user click the "Add Department" option
 		And user fill in the required department details
 		And user submit the form

@@ -29,7 +29,7 @@ public class MessagePage {
     @FindBy(xpath = "//td[@class='files-info']")
     public WebElement inTextMessage;
 
-    @FindBy(xpath = "//td[@class='files-del-btn']")
+    @FindBy(xpath = "//span[@class='del-but']")
     public WebElement deleteUploadBtn;
 
     @FindBy(xpath = "//td[@class='files-name']")

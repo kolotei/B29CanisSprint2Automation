@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MessagePage {
+public class US05_MessagePage {
 
-    public MessagePage(){
+    public US05_MessagePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -23,16 +23,8 @@ public class MessagePage {
     @FindBy(xpath = "//span[@class='insert-btn']")
     public WebElement insertInTextBtn;
 
-    @FindBy(xpath = "//a[@class='files-path']")
-    public WebElement uploadedFilesConfMessage;
-
-    @FindBy(xpath = "//td[@class='files-info']")
-    public WebElement inTextMessage;
-
     @FindBy(xpath = "//span[@class='del-but']")
-    public WebElement deleteUploadBtn;
+    public WebElement deleteFileBtn;
 
-    @FindBy(xpath = "//td[@class='files-name']")
-    public WebElement uploadedFile;
 
 }

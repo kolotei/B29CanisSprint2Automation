@@ -5,6 +5,7 @@ package com.sprint2Implementation.pages;
 
 import com.sprint2Implementation.utilities.BrowserUtils;
 import com.sprint2Implementation.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,9 +16,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BasePage {
+
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+
+    public BasePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
@@ -38,9 +46,9 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
-    public BasePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
+
+
 
 
     /**
@@ -52,7 +60,6 @@ public abstract class BasePage {
 //        BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
     }
-
 
     /**
      * Waits until loader screen present. If loader screen will not pop up at all,
@@ -68,8 +75,6 @@ public abstract class BasePage {
         }
 
     }
-
-
 
     /**
      * This method will navigate user to the specific module in vytrack application.
@@ -99,5 +104,4 @@ public abstract class BasePage {
             BrowserUtils.clickWithTimeOut(Driver.getDriver().findElement(By.xpath(moduleLocator)),  5);
         }
     }
-
 }

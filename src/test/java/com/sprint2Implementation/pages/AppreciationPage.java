@@ -2,6 +2,8 @@ package com.sprint2Implementation.pages;
 
 import com.sprint2Implementation.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -60,13 +62,17 @@ public class AppreciationPage extends  BasePage{
 
         wait.until(ExpectedConditions.elementToBeClickable(deleteUploadBtn));
         deleteUploadBtn.click();
-        Assert.assertTrue(firstFileInsert == null);
-        /*List<WebElement> filesToDelete = Driver.getDriver().findElements(By.cssSelector("span[class='del-but']"));
-        for (int counter = 1; counter <= filesToDelete.size(); counter++ ) {
-            deleteUploadBtn.click();
-        }
-        Assert.assertTrue(!firstFileInsert.isDisplayed());*/
+        Assert.assertTrue("file was not deleted", !isElementPresent());
 
+    }
+
+    public boolean isElementPresent (){
+        try{
+            Driver.getDriver().findElement(By.cssSelector("span[class='del-but']"));
+            return true;
+        }catch(NoSuchElementException e){
+            return false;
+        }
     }
 
 }

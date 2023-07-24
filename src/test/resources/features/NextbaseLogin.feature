@@ -1,3 +1,4 @@
+@HelpDeskUser
 Feature: Login feature
 
   @HelpDeskUser

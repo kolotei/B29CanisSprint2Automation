@@ -31,7 +31,6 @@ Given the user is on the login page
 		    |help desk         |
 		    |marketing         |	
 
-	
 	@B29G10-240
 	Scenario Outline: User should be able to remove files and images at any time before sending.
 		And the user logged in as "<user name>"

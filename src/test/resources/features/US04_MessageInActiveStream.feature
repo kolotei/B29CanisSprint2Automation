@@ -1,4 +1,4 @@
-
+@US4
 
 Feature: Sending message in Active Stream feature
   User Story:
@@ -34,11 +34,11 @@ Feature: Sending message in Active Stream feature
     And user see message field collapse
     Then  user see delivery to All employees
 
-  @US4
+
   Scenario: verify user is able to cancel sending messages at any time before sending
     Given the user logged in as "hr"
     When user clicks  MESSAGE button
-    And   user type a Message
+    And  user see message field collapse
     Then  user click Cancel
 
 

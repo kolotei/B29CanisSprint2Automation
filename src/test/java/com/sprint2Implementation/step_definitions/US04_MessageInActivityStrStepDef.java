@@ -56,18 +56,11 @@ public class US04_MessageInActivityStrStepDef {
 
     @Then("user see delivery to All employees")
     public void user_see_delivery_to_all_employees() {
-        messageInActiveStreamPage.AllEmployeesBtn.isDisplayed();
 
+      Assert.assertTrue(messageInActiveStreamPage.AllEmployeesBtn.isDisplayed());
     }
 
-    @When("user type a Message")
-    public void user_type_a_message() {
-       Driver.getDriver().switchTo().frame(messageInActiveStreamPage.iframe);
 
-
-
-
-    }
     @Then("user click Cancel")
     public void user_click_cancel() {
         messageInActiveStreamPage.CancelBtn.click();

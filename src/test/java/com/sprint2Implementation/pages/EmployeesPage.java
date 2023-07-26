@@ -7,19 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class EmployeePage {
+public class EmployeesPage {
 
-    public EmployeePage(){
+    public EmployeesPage(){
         PageFactory.initElements(Driver.getDriver(), this);
             }
 
     @FindBy(xpath = "//a[@title='Employees']")
-    public WebElement employeeBtn;
+    public WebElement employeesBtn;
 
     @FindBy(xpath = "//span[@class='main-buttons-item-text-title']")
-    public List<WebElement> employeePageModules;
-
-    //a[@class='main-buttons-item-link']
+    public List<WebElement> employeesPageModules;
 
     @FindBy(xpath = "(//span[.='Company Structure'])[1]")
     public WebElement module1;

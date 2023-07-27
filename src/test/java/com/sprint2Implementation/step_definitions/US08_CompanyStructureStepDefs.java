@@ -5,6 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
 public class US08_CompanyStructureStepDefs {
 
@@ -45,11 +48,20 @@ public class US08_CompanyStructureStepDefs {
 
     @Then("user verify Add Department is not displayed")
     public void user_verify_add_department_is_not_displayed() {
-      comp_strPage.employeeLink.click();
-        Assert.assertTrue("Its is displayed" ,!comp_strPage.addDepBtn.isDisplayed());
+        comp_strPage.employeeLink.click();
+
+        //Assert.assertTrue("Its is displayed" ,!comp_strPage.addDepBtn.isDisplayed());
+
+        try {
+            Assert.assertTrue("Its is displayed", !comp_strPage.addDepBtn.isDisplayed());
+
+        } catch (NoSuchElementException e) {
+
+            System.out.println("Element not found on the page.");
+
+        }
+
     }
-
-
 }
 
 
